@@ -7,12 +7,19 @@
     <link rel="icon" type="image/x-icon" href="/static/ico/ssmm.ico">
     <style>
    
-body{
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
+   body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+     
+      background: #f4f4f4;
+      color: #333;
+    }
+
 body::-webkit-scrollbar{
+    display: none;
+}
+#sec{
     display: none;
 }
         header{
@@ -23,7 +30,9 @@ body::-webkit-scrollbar{
             background-color: black;
             color: white;
         }
-
+#header{
+    display: block;
+}
         .header{
             color: white;
             transition: 0.3s;
@@ -48,6 +57,9 @@ body::-webkit-scrollbar{
         }
         #text{
             
+        }
+        #header2{
+            display: none;
         }
         #main-text{
             width: 356px;
@@ -99,6 +111,7 @@ body::-webkit-scrollbar{
             display: flex;
             padding: 14px;
             margin: 8px;
+            padding-right: 0;
             width: 100%;
         }
         .topic{
@@ -113,7 +126,85 @@ body::-webkit-scrollbar{
         .topic:hover{
             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
         }
+#header{
+    display: block;
+}
 
+#header2 {
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #sec {
+      background: #fff;
+      padding: 40px;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    #btn2 {
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: #fff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background 0.3s ease;
+    }
+
+    #btn2:hover {
+      background: linear-gradient(to right, #764ba2, #667eea);
+    }
+
+    footer {
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    #h2 {
+      color: #764ba2;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    li {
+      margin-bottom: 20px;
+    }
+#pt{
+display: block;
+padding: 30px;
+margin: 30px;
+text-align: center;
+}
+#pt th, #pt td {
+      border: 1px solid #ddd;
+      padding: 15px;
+      text-align: left;
+    }
+
+    #pt th {
+      background-color: #f2f2f2;
+    }
+
+.facility {
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      margin: 10px 0;
+    }
         @media only screen and (max-width: 600px) {
             body{
     margin: 0;
@@ -121,13 +212,20 @@ body::-webkit-scrollbar{
     overflow-x: hidden;
     
 }
+
+#header{
+    display: none;
+}
+#header2{
+    display: block;
+}
+#sec{
+    display: block;
+}
 body::-webkit-scrollbar{
     display: none;
 }
-            header #img{
-            width: 100%;
-            height: 520px;
-        }
+          
         
         #img-container{
             /* height: 350px;
@@ -139,12 +237,21 @@ body::-webkit-scrollbar{
         #span, #text{
             width: 100%;
         }
+        #n-text{
+            display: none;
+        }
         .center{
             position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70%;
+        }
+        #main-content{
+            display: none;
+        }
+        #pt{
+            display: none;
         }
         #main-text{
             width: 100%;
@@ -153,6 +260,7 @@ body::-webkit-scrollbar{
             font-weight: bold;
             color: white;
             padding: 4px;
+            display: none;
             
         }
         #desc-text{
@@ -163,12 +271,41 @@ body::-webkit-scrollbar{
             padding: 6px;
             margin: 6px;
           
-          
+          display: none;
         }
         #btn{
             text-align: center;
+            display: none;
         }
-       
+        section {
+        padding: 20px;
+      }
+
+      #btn2 {
+        padding: 12px 24px;
+      }
+
+      .facility {
+        padding: 15px;
+        margin: 10px 0;
+      }
+      table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 15px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+   
     }
     </style>
 </head>
@@ -233,9 +370,171 @@ body::-webkit-scrollbar{
             </div>
         </div>
        </div>
+       <div id="pt">
+        <h2 style="text-align: center; margin-top: 40px;" id="h2">Pricing Table:</h2>
+            <table>
+                <tr>
+                  <th>Platform</th>
+                  <th>Per month (in USD)</th>
+                  <th>Per year (in USD)</th>
+                </tr>
+                <tr>
+                  <td>Facebook Group/ Page</td>
+                  <td>$49</td>
+                  <td>$449</td>
+                </tr>
+                <tr>
+                  <td>Facebook (Personal Account)</td>
+                  <td>$59</td>
+                  <td>$499</td>
+                </tr>
+                <tr>
+                  <td>Instagram (Personal Account)</td>
+                  <td>$99</td>
+                  <td>$999</td>
+                </tr>
+                <tr>
+                  <td>Instagram (Business Account)</td>
+                  <td>$89</td>
+                  <td>$799</td>
+                </tr>
+                <tr>
+                  <td>Email of Organization for marketing and replies</td>
+                  <td>$49</td>
+                  <td>$449</td>
+                </tr>
+                <tr>
+                  <td>Email for writing</td>
+                  <td>$29</td>
+                  <td>$249</td>
+                </tr>
+                <tr>
+                  <td>Pinterest</td>
+                  <td>$39</td>
+                  <td>$399</td>
+                </tr>
+                <tr>
+                  <td>Shopify (commission) or 10% commission on every product sold</td>
+                  <td>10% commission on every product sold</td>
+                  <td>10% commission on every product sold</td>
+                </tr>
+                <tr>
+                  <td>Shopify (payment option)</td>
+                  <td>$39</td>
+                  <td>$349</td>
+                </tr>
+                <tr>
+                  <td>Prompt engineer (ChatGPT, Bard ai)</td>
+                  <td>$9 per AI platform</td>
+                  <td>$99 per AI platform</td>
+                </tr>
+                <tr>
+                  <td>Prompt engineer (ChatGPT, Bard ai)</td>
+                  <td>$19 for both AI platform</td>
+                  <td>$199 for both AI platform</td>
+                </tr>
+              </table>
+            
+              <a href="https://forms.gle/FhV1dMbhE2rBXqtQ6" target="_blank"><button class="btn" id="btn1" style="background-color: #764ba2; color: white;">Start Now</button> </a>
+       </div>
     </main>
     <script>
         
         </script>
+
+          <header id="header2">
+            <h1 style="margin: 0;">SICO SOCIAL MEDIA MARKETING AGENCY</h1>
+            <p>Your Social Media Solution</p>
+          </header>
+        <section id="sec">
+            <p style="text-align: center; font-size: 24px; color: #333; margin-bottom: 20px;">"Social Media Magic: We Make Your Brand Shine!"</p>
+            <p style="text-align: center; font-size: 16px; color: #555;">        Elevate your brand's online presence with expert social media management.</p>
+        
+            <div style="text-align: center; margin-top: 30px;">
+              <a href="https://forms.gle/FhV1dMbhE2rBXqtQ6" target="_blank"><button id="btn2">Start Now</button></a>
+            </div>
+        
+            <h2 style="text-align: center; margin-top: 40px;" id="h2">Facilities:</h2>
+            <ul>
+              <li class="facility"><h4>Well experienced team</h4>
+                <p>We have well experienced team with qualifications.</p></li>
+              <li class="facility"><h4>Content Creation</h4>
+                <p>Our team will create content with highly graphic designs</p></li>
+              <li class="facility"><h4>Social Media Advertising</h4><p>Targeted advertising to boost your reach.</p></li>
+              <li class="facility"> <h4>Audience Research</h4>
+                <p>Our team is well experienced in identifing and targeting the most relevant demographics and interests for effective marketing.</li>
+              <li class="facility"><h4>Community Management</h4><p>Building and nurturing your online community.</p></li>
+              <li class="facility"><h4>Analytics and Reporting</h4><p>Measuring success and optimizing strategies.</p></li>
+              <li class="facility"><h4>Customer Support</h4>
+                <p>We will provide prompt and helpful responses to customer inquiries and concerns</li>
+            </ul>
+            <br>
+            <h2 style="text-align: center; margin-top: 40px;" id="h2">Pricing Table:</h2>
+            <table>
+                <tr>
+                  <th>Platform</th>
+                  <th>Per month (in USD)</th>
+                  <th>Per year (in USD)</th>
+                </tr>
+                <tr>
+                  <td>Facebook Group/ Page</td>
+                  <td>$49</td>
+                  <td>$449</td>
+                </tr>
+                <tr>
+                  <td>Facebook (Personal Account)</td>
+                  <td>$59</td>
+                  <td>$499</td>
+                </tr>
+                <tr>
+                  <td>Instagram (Personal Account)</td>
+                  <td>$99</td>
+                  <td>$999</td>
+                </tr>
+                <tr>
+                  <td>Instagram (Business Account)</td>
+                  <td>$89</td>
+                  <td>$799</td>
+                </tr>
+                <tr>
+                  <td>Email of Organization for marketing and replies</td>
+                  <td>$49</td>
+                  <td>$449</td>
+                </tr>
+                <tr>
+                  <td>Email for writing</td>
+                  <td>$29</td>
+                  <td>$249</td>
+                </tr>
+                <tr>
+                  <td>Pinterest</td>
+                  <td>$39</td>
+                  <td>$399</td>
+                </tr>
+                <tr>
+                  <td>Shopify (commission) or 10% commission on every product sold</td>
+                  <td>10% commission on every product sold</td>
+                  <td>10% commission on every product sold</td>
+                </tr>
+                <tr>
+                  <td>Shopify (payment option)</td>
+                  <td>$39</td>
+                  <td>$349</td>
+                </tr>
+                <tr>
+                  <td>Prompt engineer (ChatGPT, Bard ai)</td>
+                  <td>$9 per AI platform</td>
+                  <td>$99 per AI platform</td>
+                </tr>
+                <tr>
+                  <td>Prompt engineer (ChatGPT, Bard ai)</td>
+                  <td>$19 for both AI platform</td>
+                  <td>$199 for both AI platform</td>
+                </tr>
+              </table>
+            
+       
+          </section>
+          
 </body>
 </html>
